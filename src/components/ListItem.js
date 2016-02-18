@@ -9,6 +9,7 @@ export default class ListItem extends Component {
     render() {
         return <div>
             <blockquote>
+                <p>weird</p>
                 <p>{this.props.tweet.text}</p>
             </blockquote>
         </div>;

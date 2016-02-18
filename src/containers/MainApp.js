@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import io from 'socket.io-client';
-import mapValues from 'lodash/object/mapValues';
 
 import * as TweetActions from '../actions/TweetActions';
 import { EntityList } from '../components';
@@ -22,12 +21,12 @@ export default class TweetsApp extends Component {
 
         let socket = io.connect();
         this.state = {socket};
-
         this.fetchRecents();
     }
 
     fetchRecents() {
-        this.state.socket.on('sendNormTweet', (data) => {
+        this.state.socket.emit('search', {keyword: '-180,-90,180,90'})
+        this.state.socket.on('sendGeoTweet', (data) => {
             this.actions.addTweet(data);
         });
     }

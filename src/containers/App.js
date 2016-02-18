@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { combineReducers } from 'redux';
+import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import TweetsApp from './MainApp';
@@ -19,7 +19,7 @@ export default class App extends Component {
         return(
             <div>
                 <Provider store={store}>
-                    {() => <TweetsApp />}
+                    <TweetsApp />
                 </Provider>
             </div>
         );

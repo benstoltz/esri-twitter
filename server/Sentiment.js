@@ -39,26 +39,25 @@ sentiment.appendSentiment = function(tweet, sentiment, socket) {
             lang: tweet.lang,
             geo: tweet.geo
         };
-        console.log(geoTweet.geo);
         socket.emit('sendGeoTweet', {tweet: geoTweet});
-    } else {
-        var normTweet = {
-            sentiment: sentiment,
-            created_at: tweet.created_at,
-            timestamp_ms: tweet.timestamp_ms,
-            id_str: tweet.id_str,
-            user: {
-                name: tweet.user.name,
-                screen_name: tweet.user.screen_name,
-                profile_image_url_https: tweet.user.profile_image_url_https,
-                location: tweet.user.location,
-                time_zone: tweet.user.time_zone
-            },
-            text: tweet.text,
-            lang: tweet.lang
-        };
-        console.log(normTweet.text);
-        socket.emit('sendNormTweet', {tweet: normTweet});
+    //} else {
+    //    var normTweet = {
+    //        sentiment: sentiment,
+    //        created_at: tweet.created_at,
+    //        timestamp_ms: tweet.timestamp_ms,
+    //        id_str: tweet.id_str,
+    //        user: {
+    //            name: tweet.user.name,
+    //            screen_name: tweet.user.screen_name,
+    //            profile_image_url_https: tweet.user.profile_image_url_https,
+    //            location: tweet.user.location,
+    //            time_zone: tweet.user.time_zone
+    //        },
+    //        text: tweet.text,
+    //        lang: tweet.lang
+    //    };
+    //    console.log(normTweet.id_str);
+    //    socket.emit('sendNormTweet', {tweet: normTweet});
     }
 };
 

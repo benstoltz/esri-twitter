@@ -22,7 +22,7 @@ export default function tweetslist(state = initialState, action) {
 
             return {
                 ...state,
-                tweets: [newTweet, ...oldTweets].splice(0, 5)
+                tweets: [newTweet, ...oldTweets].splice(0, 100)
             };
 
 

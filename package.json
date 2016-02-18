@@ -35,7 +35,11 @@
   "babel": {
     "presets": [
       "es2015",
+      "stage-0",
       "react"
+    ],
+    "plugins": [
+      "transform-decorators-legacy"
     ]
   },
   "dependencies": {
@@ -51,6 +55,8 @@
     "sentiment": "^1.0.6",
     "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5",
+    "terraformer": "^1.0.5",
+    "terraformer-arcgis-parser": "^1.0.4",
     "twit": "^2.2.2"
   }
 }

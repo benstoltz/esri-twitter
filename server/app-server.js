@@ -29,6 +29,15 @@ var server = http.createServer(app).listen(3000, function() {
 var io = require('socket.io').listen(server);
 var connections = [];
 
+//Twitter.get('search/tweets', { q: 'Esri', count: 100000}, function(err, data, response) {
+//    data.statuses.map(function(tweet) {
+//        if (tweet.geo) {
+//            console.log(tweet)
+//        }
+//        console.log('bob')
+//    })
+//});
+
 
 io.sockets.on('connection', function(socket) {
 
@@ -51,7 +60,7 @@ io.sockets.on('connection', function(socket) {
             prevSearch = true;
         }
 
-        twitterStream = Twitter.stream('statuses/filter', {language: 'en', track: 'obama'});
+        twitterStream = Twitter.stream('statuses/filter', {language: 'en', locations: payload.keyword});
 
         // Turn on Twitter stream
 
