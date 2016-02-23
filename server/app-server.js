@@ -60,6 +60,8 @@ io.sockets.on('connection', function(socket) {
             prevSearch = true;
         }
 
+        // track location
+
         twitterStream = Twitter.stream('statuses/filter', {language: 'en', locations: payload.keyword});
 
         // Turn on Twitter stream

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import ListItem from './ListItem';
+import ListItem from './Tweet';
 
 
 export default class EntityList extends Component {
@@ -13,8 +13,8 @@ export default class EntityList extends Component {
             {
                 this.props.tweets.map(tweet => {
                     return <ListItem
-                        key={tweet.tweet.id_str}
-                        tweet={tweet.tweet}
+                        key={tweet.tweet.properties.id_str}
+                        tweet={tweet.tweet.properties}
                     />;
                 })
             }
