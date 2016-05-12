@@ -10,8 +10,8 @@ export default class ListItem extends Component {
         return <div>
             <blockquote>
                 <h3>{this.props.tweet.user.name}</h3>
-                <h5>I'm very: {this.props.tweet.sentiment}</h5>
-                <h5>I'm using: {this.props.tweet.source}</h5>
+                <h5>Im very: {this.props.tweet.sentiment}</h5>
+                <h5>Im using: {this.props.tweet.source}</h5>
                 <p>{this.props.tweet.text}</p>
                 <p>From: {this.props.tweet.user.location}</p>
                 <p>But really my location is: {this.props.tweet.place.full_name}</p>
